@@ -1,0 +1,18 @@
+{{#if (route-is "index")}}
+
+<div class="gh-page">
+  <div class="gh-container">
+
+    <div class="gh-postfeed">
+      {{#each (sort-by 'date:desc' model) as |post index|}}
+
+      {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+      <PostCard @post={{post}} @index={{index}} />
+
+      {{/each}}
+    </div>
+
+  </div>
+</div>
+
+{{/if}}

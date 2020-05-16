@@ -1,11 +1,12 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
     locationType: 'auto',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,6 +21,23 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    blog: {
+      title: 'empress-blog',
+      description: 'Static Blog System - Built with Ember',
+      coverImage: '/images/blog-cover.jpg',
+      twitter: "emberjs",
+      logo: '',
+      rssLogo: '',
+      navigation: [{
+        label: 'Home',
+        route: 'index'
+      }, {
+        label: 'Built by Chris Manson',
+        route: 'page',
+        id: 'chris-manson'
+      }]
     }
   };
 

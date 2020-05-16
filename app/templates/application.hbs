@@ -1,0 +1,52 @@
+<div class="gh-viewport">
+  <header id="gh-head" class="gh-head gh-head-stacked">
+    <nav class="gh-container">
+
+      <div class="gh-head-brand">
+        <div class="gh-head-logo">
+          {{#if blog.logo}}
+          <img src={{blog.logo}} alt={{blog.title}} />
+          {{else}}
+          {{blog.title}}
+          {{/if}}
+        </div>
+        <a class="gh-burger" role="button">
+          <div class="gh-burger-box">
+            <div class="gh-burger-inner"></div>
+          </div>
+        </a>
+      </div>
+      <div class="gh-head-menu">
+        <Navigation />
+      </div>
+    </nav>
+  </header>
+
+  <main class="gh-main">
+
+    {{outlet}}
+    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+
+  </main>
+
+  <footer class="gh-foot">
+    <div class="gh-container">
+      <div class="gh-foot-menu">
+        <Navigation />
+      </div>
+      <div class="gh-foot-actions">
+        <div class="gh-foot-actions-list">
+          {{#if blog.facebook}}
+          <a href={{blog.facebook}} title="Facebook" target="_blank" rel="noopener">facebook</a>
+          {{/if}}
+          {{#if blog.twitter}}
+          <a href={{blog.twitter}} title="Twitter" target="_blank" rel="noopener">twitter</a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="gh-foot-meta">
+        Published with <a href="https://github.com/empress/empress-blog" target="_blank" rel="noopener">empress-blog</a>
+      </div>
+    </div>
+  </footer>
+</div>

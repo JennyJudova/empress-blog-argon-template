@@ -1,0 +1,59 @@
+{{#let model.post as |post|}}
+{{!-- <article class="gh-article {{post_class}}""> {{unless post.image 'no-image'}} --}}
+<article class="gh-article {{post.class}}">
+  <header class="gh-header gh-canvas">
+    <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></span>
+
+    <h1 class="gh-title">{{post.title}}</h1>
+
+    <p class="gh-excerpt">{{excerpt post.content words="20"}}</p>
+
+    {{#if post.image}}
+    <img class="gh-feature-image" src={{post.image}} alt={{post.title}} />
+    {{/if}}
+  </header>
+
+  <div class="gh-content gh-canvas">
+    {{markdown-to-html post.content}}
+  </div>
+
+  <footer class="gh-footer gh-canvas">
+
+    <div class="gh-post-authors">
+      Written by {{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}
+    </div>
+
+    {{!--
+        <section class="gh-post-comments">
+            If you want to embed comments, this is a good place to do it!
+        </section>
+        --}}
+
+  </footer>
+</article>
+
+<aside class="gh-readmore">
+  <div class="gh-container">
+    <div class="gh-readmore-next">
+      {{#if nextPost}}
+      {{#link-to 'post' nextPost.id class="post-nav-prev"}}
+      <section class="post-nav-teaser">
+        <h4 class="post-nav-title">{{nextPost.title}} > </h4>
+      </section>
+      {{/link-to}}
+      {{/if}}
+    </div>
+    <div class="gh-readmore-prev">
+      {{#if prevPost}}
+      {{#link-to 'post' prevPost.id class="post-nav-next"}}
+      <section class="post-nav-teaser">
+        <h4 class="post-nav-title"> {{prevPost.title}} ></h4>
+      </section>
+      {{/link-to}}
+      {{/if}}
+    </div>
+  </div>
+</aside>
+
+
+{{/let}}
