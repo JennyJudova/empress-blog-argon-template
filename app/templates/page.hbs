@@ -1,10 +1,18 @@
-
 {{#let model as |post|}}
-<article class="post-content {{post_class}} {{unless post.image 'no-image'}}">
+<article class="gh-article">
+  <header class="gh-header gh-canvas">
+    <h1 class="gh-title">{{post.title}}</h1>
 
-    <div class="post-content-body">
-        {{markdown-to-html post.content tagName=""}}
-    </div>
+    <p class="gh-excerpt">{{excerpt post.content words="20"}}</p>
+
+    {{#if post.image}}
+    <img class="gh-feature-image" src={{post.image}} alt={{post.title}} />
+    {{/if}}
+  </header>
+
+  <div class="gh-content gh-canvas">
+    {{markdown-to-html post.content tagName=""}}
+  </div>
 
 </article>
 {{/let}}

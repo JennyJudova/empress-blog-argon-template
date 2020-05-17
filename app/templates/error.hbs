@@ -1,10 +1,25 @@
-
 {{#let (get model.errors 0) as |error|}}
+{{log error}}
+<section class="gh-page gh-error">
+  <div class="gh-container">
 
-<header class="page-head error-head">
-    <h1 class="page-head-title">{{error.status}}</h1>
-    <p class="page-head-description">{{error.title}}</p>
-    {{#link-to 'index'}}Go to the front page →{{/link-to}}
-</header>
+    <section class="gh-error-content">
 
+      <h1 class="gh-error-code">{{error.status}}</h1>
+      <p class="gh-error-description">{{error.title}}</p>
+      <p class="gh-error-link">{{#link-to 'index'}}Go to the front page →{{/link-to}}</p>
+
+      {{#if error.detail}}
+      <section class="gh-error-stack">
+        <h4>Theme errors:</h4>
+
+        <h5 class="gh-error-stack-function">{{error.detail}}</h5>
+
+      </section>
+      {{/if}}
+
+    </section>
+
+  </div>
+</section>
 {{/let}}
