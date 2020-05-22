@@ -28,10 +28,8 @@
     {{/let}}
 
     <div class="gh-postfeed">
-      {{#each author.posts.content.currentState as |post|}}
-      {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+      {{#each model.posts as |post|}}
       <PostCard @post={{post}} />
-
       {{/each}}
     </div>
 
