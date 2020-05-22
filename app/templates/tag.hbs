@@ -1,22 +1,35 @@
+{{!< default}}
 
-{{#let model.tag as |tag|}}
-<header class="page-head">
-    <h1 class="page-head-title">{{tag}}</h1>
-    <p class="page-head-description">
+<div class="gh-page">
+  <div class="gh-container">
+
+    {{#let model.tag as |tag|}}
+    <header class="gh-page-head">
+
+      <h1>{{tag}}</h1>
+
+      <p>
         {{#if tag.description}}
-            {{tag.description}}
+        {{tag.description}}
         {{else}}
-            A collection of {{plural model.posts.length empty='posts' singular='% post' plural='% posts'}}
+        A collection of {{plural model.posts.length empty='posts' singular='% post' plural='% posts'}}
         {{/if}}
-    </p>
-</header>
-{{/let}}
+      </p>
 
-<div class="post-feed">
-{{#each model.posts as |post|}}
+      {{!-- {{#if feature_image}}
+            <img class="gh-page-image" src="{{feature_image}}" alt="{{name}}" />
+            {{/if}} --}}
 
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-    <PostCard @post={{post}} />
+    </header>
+    {{/let}}
 
-{{/each}}
+    <div class="gh-postfeed">
+      {{#each model.posts as |post|}}
+
+      <PostCard @post={{post}} />
+
+      {{/each}}
+    </div>
+
+  </div>
 </div>
