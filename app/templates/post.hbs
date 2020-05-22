@@ -1,5 +1,4 @@
-{{#let model.post as |post|}}
-{{!-- <article class="gh-article {{post_class}}""> {{unless post.image 'no-image'}} --}}
+{{#let @model.post as |post|}}
 <article class="gh-article {{post.class}}">
   <header class="gh-header gh-canvas">
     <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></span>
@@ -20,7 +19,7 @@
   <footer class="gh-footer gh-canvas">
 
     <div class="gh-post-authors">
-      Written by {{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}
+      Written by <LinkTo @route="author" @model={{@model.post.author.id}}>{{@model.post.author.name}}</LinkTo>
     </div>
 
     {{!--
@@ -35,21 +34,21 @@
 <aside class="gh-readmore">
   <div class="gh-container">
     <div class="gh-readmore-prev">
-      {{#if prevPost}}
-      {{#link-to 'post' prevPost.id class="post-nav-next"}}
-      <section class="post-nav-teaser">
-        <h5 class="post-nav-title"> {{prevPost.title}}</h5>
-      </section>
-      {{/link-to}}
+      {{#if this.prevPost}}
+      <LinkTo @route="post" @model={{this.prevPost.id}} class="post-nav-prev">
+        <section class="post-nav-teaser">
+          <h5 class="post-nav-title"> {{this.prevPost.title}}</h5>
+        </section>
+      </LinkTo>
       {{/if}}
     </div>
     <div class="gh-readmore-next">
-      {{#if nextPost}}
-      {{#link-to 'post' nextPost.id class="post-nav-prev"}}
-      <section class="post-nav-teaser">
-        <h5 class="post-nav-title">{{nextPost.title}}</h5>
-      </section>
-      {{/link-to}}
+      {{#if this.nextPost}}
+      <LinkTo @route="post" @model={{this.nextPost.id}} class="post-nav-next">
+        <section class="post-nav-teaser">
+          <h5 class="post-nav-title">{{this.nextPost.title}}</h5>
+        </section>
+      </LinkTo>
       {{/if}}
     </div>
   </div>

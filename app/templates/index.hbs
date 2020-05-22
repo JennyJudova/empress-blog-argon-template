@@ -4,7 +4,7 @@
   <div class="gh-container">
 
     <div class="gh-postfeed">
-      {{#each (sort-by 'date:desc' model) as |post index|}}
+      {{#each (sort-by 'date:desc' @model) as |post index|}}
 
       {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
       <PostCard @post={{post}} @index={{index}} />

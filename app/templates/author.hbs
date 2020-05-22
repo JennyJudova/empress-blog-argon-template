@@ -1,9 +1,7 @@
-{{!< default}}
-
 <div class="gh-page">
   <div class="gh-container">
 
-    {{#let model as |author|}}
+    {{#let @model as |author|}}
     <header class="gh-page-head">
       {{#if author.image}}
       <img class="gh-author-image" src={{author.image}} alt={{author.name}} />
@@ -17,10 +15,10 @@
       <div class="gh-author-meta">
         <div class="gh-author-links">
           {{#if author.twitter}}
-          <a href={{author.twitter}} target="_blank" rel="noopener">Twitter</a>
+          <a href={{author.twitter}} target="_blank" rel="noopener noreferrer">Twitter</a>
           {{/if}}
           {{#if author.facebook}}
-          <a href={{author.facebook}} target="_blank" rel="noopener">Facebook</a>
+          <a href={{author.facebook}} target="_blank" rel="noopener noreferrer">Facebook</a>
           {{/if}}
         </div>
       </div>
@@ -28,7 +26,7 @@
     {{/let}}
 
     <div class="gh-postfeed">
-      {{#each model.posts as |post|}}
+      {{#each @model.posts as |post|}}
       <PostCard @post={{post}} />
       {{/each}}
     </div>

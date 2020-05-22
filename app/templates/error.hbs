@@ -1,4 +1,4 @@
-{{#let (get model.errors 0) as |error|}}
+{{#let (get @model.errors 0) as |error|}}
 <section class="gh-page gh-error">
   <div class="gh-container">
 
@@ -6,7 +6,9 @@
 
       <h1 class="gh-error-code">{{error.status}}</h1>
       <p class="gh-error-description">{{error.title}}</p>
-      <p class="gh-error-link">{{#link-to 'index'}}Go to the front page →{{/link-to}}</p>
+      <p class="gh-error-link">
+        <LinkTo @route="index">Go to the front page →</LinkTo>
+      </p>
 
       {{#if error.detail}}
       <section class="gh-error-stack">

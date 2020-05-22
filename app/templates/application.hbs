@@ -1,20 +1,19 @@
 <div class="gh-viewport">
   <header id="gh-head" class="gh-head gh-head-stacked">
     <nav class="gh-container">
-
       <div class="gh-head-brand">
         <div class="gh-head-logo">
-          {{#if blog.logo}}
-          <img src={{blog.logo}} alt={{blog.title}} />
+          {{#if this.blog.logo}}
+          <img src={{this.blog.logo}} alt={{this.blog.title}} />
           {{else}}
-          {{blog.title}}
+          {{this.blog.title}}
           {{/if}}
         </div>
-        <a class="gh-burger" role="button">
+        <button class="gh-burger" type="button">
           <div class="gh-burger-box">
             <div class="gh-burger-inner"></div>
           </div>
-        </a>
+        </button>
       </div>
       <div class="gh-head-menu">
         <Navigation />
@@ -25,7 +24,6 @@
   <main class="gh-main">
 
     {{outlet}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
 
   </main>
 
@@ -36,16 +34,17 @@
       </div>
       <div class="gh-foot-actions">
         <div class="gh-foot-actions-list">
-          {{#if blog.facebook}}
-          <a href={{blog.facebook}} title="Facebook" target="_blank" rel="noopener">facebook</a>
+          {{#if this.blog.facebook}}
+          <a href={{this.blog.facebook}} title="Facebook" target="_blank" rel="noopener noreferrer">facebook</a>
           {{/if}}
-          {{#if blog.twitter}}
-          <a href={{blog.twitter}} title="Twitter" target="_blank" rel="noopener">twitter</a>
+          {{#if this.blog.twitter}}
+          <a href={{this.blog.twitter}} title="Twitter" target="_blank" rel="noopener noreferrer">twitter</a>
           {{/if}}
         </div>
       </div>
       <div class="gh-foot-meta">
-        Published with <a href="https://github.com/empress/empress-blog" target="_blank" rel="noopener">empress-blog</a>
+        Published with <a href="https://github.com/empress/empress-blog" target="_blank"
+          rel="noopener noreferrer">empress-blog</a>
       </div>
     </div>
   </footer>
