@@ -7,7 +7,23 @@
   ],
   "repository": "",
   "license": "MIT",
-  "author": "",
+  "authors": [
+    {
+      "name": "Jenny Judova",
+      "email": "jjudova@gmail.com",
+      "url": "https://github.com/JennyJudova"
+    },
+    {
+      "name": "Chris Manson",
+      "email": "chris@manson.ie",
+      "url": "https://github.com/sponsors/mansona"
+    },
+    {
+      "name": "Ghost",
+      "email": "hello@ghost.org",
+      "url": "https://ghost.org"
+    }
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
