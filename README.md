@@ -1,7 +1,7 @@
 # empress-blog-argon-template
 
 This is a template designed to work with [empress-blog](https://github.com/empress/empress-blog) and is a fully-functional, static site implementation of the
-[Argon Template](https://github.com/zutrinken/attila) built on EmberJS with fully working out of the
+[Argon Template](https://github.com/TryGhost/Argon) built on EmberJS with fully working out of the
 box SEO friendly output. It supports being hosted on Github Pages, AWS S3 or any other static site
 hosting solution.
 
