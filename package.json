@@ -1,11 +1,16 @@
 {
   "name": "empress-blog-argon-template",
-  "version": "0.0.0",
-  "description": "Created from empress template.",
+  "version": "1.1.0",
+  "description": "Static Site Template designed to work with empress-blog.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "empress-blog",
+    "empress-blog-template"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JennyJudova/empress-blog-argon-template"
+  },
   "license": "MIT",
   "authors": [
     {
