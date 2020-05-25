@@ -13,7 +13,7 @@ and the rest of the work is performed by EmberJS' build system.
 
 ## Quick Start
 
-```sh
+```
 npm init ember-app super-blog
 
 cd super-blog
